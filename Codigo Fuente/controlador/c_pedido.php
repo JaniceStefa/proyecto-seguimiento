@@ -18,7 +18,7 @@
         {
             require_once("../modelo/m_pedido.php");
             $this->modelo=new M_Pedido();
-            require_once("../vista/v_ficha_pedido.php");
+            //require_once("../vista/v_ficha_pedido.php");
 
             $Producto = $_POST['producto'];
             $Talla = $_POST['tallas'];

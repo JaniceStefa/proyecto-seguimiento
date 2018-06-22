@@ -9,5 +9,5 @@
     	$controlador->Agregar();
     }
     if(isset($_POST['catalogo']))
-    	 $controlador->Catalogo_Producto();
+    	$controlador->Catalogo_Producto();
 ?>

@@ -17,7 +17,7 @@
     if (isset($_POST['aceptar']))
     {
         //$controlador->AgregarPedido();
-        echo '<script> window.location ="../vista/order_complete.php" </script>';
+        echo '<script> window.location ="../vista/v_pedido_completo.php" </script>';
 
     }
     if (isset($_SESSION['user']))
@@ -25,8 +25,8 @@
         if($_SESSION['privilegio']== 1){
             $controlador->Admi();
         }
-            else{echo  '<script> window.location ="../vista/ficha_presupuesto.php" </script>';}
+            else{echo  '<script> window.location ="../vista/v_ficha_presupuesto.php" </script>';}
     }else{
-        echo '<script> window.location ="../vista/ficha_presupuesto.php" </script>';
+        echo '<script> window.location ="../vista/v_ficha_presupuesto.php" </script>';
                 }
 ?>

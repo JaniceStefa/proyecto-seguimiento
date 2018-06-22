@@ -7,15 +7,8 @@
 </head>
 <body>
 	<?php
-		//require_once("../controlador/c_pedido_presupuesto.php");
-		//$modelo=new C_Pedido_Presupuesto();
-		//$costo_parcial = string($_POST("costo_parcial"));
-		//foreach($this->$modelo->GenerarPresupuesto() as $registro){
-          //  echo $registro['parcial'];
-		//}
-	echo 2222222;
-	//echo $COSTO;
-
+	echo "se supone que es el costo parcial: ";
+	echo $costo_parcial;
 	?>
 </body>
 </html>

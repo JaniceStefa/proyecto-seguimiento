@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Garras | Pagina Menu</title>
+	<title>Garras | Pagina Oficial</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
@@ -23,69 +23,56 @@
 	<!-- Modernizr JS -->
 	<script src="../assets/PaginaOficial/js/modernizr-2.6.2.min.js"></script>
 
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="../assets/PaginaOficial/css/flexslider.css">
-
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="../assets/PaginaOficial/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="../assets/PaginaOficial/css/owl.theme.default.min.css">
 	<!-- Date Picker -->
 	<link rel="stylesheet" href="../assets/PaginaOficial/css/bootstrap-datepicker.css">
 
 </head>
-	<body>
+<body>
 		
 	<div class="colorlib-loader"></div>
 	<div id="page">
-		<!-- Navegacion -->
-		<nav class="colorlib-nav" role="navigation">
+	<!-- Navegacion -->
+	<nav class="colorlib-nav" role="navigation">
 			<div class="top-menu">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="index.html">Empresa Garras</a></div>
+							<div id="colorlib-logo"><a href="../index.php">Empresa Garras</a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="index.html">Inicio</a></li>
+								<li><a href="../index.php">Inicio</a></li>
+								<li><a href="../vista/V_catalogo_productos.php"> Productos</a></li>
+								<li><a href="../vista/V_contacto.php">Contactanos</a></li>
+								<li class="active"><a href="../controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
+								<?php 
+							    if (isset($_SESSION['user'])){ // valida si se ha iniciado sesión
+								?>
 								<li class="has-dropdown">
-									<a>Productos</a>
+									<a href=""><i class="icon-user2"></i> <?php echo $_SESSION['user']?> </a>
 									<ul class="dropdown">
-										<li><a href="catalogo_productos.php">Catálogo de productos</a></li>
-										<li><a href="V_pedidos.php">Carro de compras</a></li>
+										<?php
+											if($_SESSION['privilegio']== 1){
+										?>
+										<li><a href="../vista/Tablero_Admi.php""><i class="icon-user-plus2">Administrador</i></a></li>
+										<?php 
+										}	
+										?>
+										<li><a href="../controlador/c_validar_logout.php">Cerrar Sesión</a></li>
 									</ul>
-								</li>
-								<li><a href="contacto.html">Contactanos</a></li>
-								<li><a href="V_pedidos.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
-								<li><a href="V_login.php"><i class="icon-user2"></i> Log In </a></li>
+								</li>	
+								<?php 
+								} else { ?>
+								<li><a href="../vista/V_login.php"><i class="icon-user2"></i> Inicio Sesión </a></li>
+								<?php } ?>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</nav>
+	</nav>
 
-		<!--<aside id="colorlib-hero" class="breadcrumbs">
-			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(../assets/PaginaOficial/images/cover.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h1>Registro Pedido</h1>
-				   					<h2 class="bread"><span><a href="index.html">Inicio</a></span> <span><a href="catalogo_productos.php">Productos</a></span> <span>Pedidos</span></h2>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
-		</aside>-->
-
-		<div class="colorlib-shop">
+	<div class="colorlib-shop">
 			<div class="container">
 				<div class="row row-pb-md">
 					<div class="col-md-10 col-md-offset-1">
@@ -113,26 +100,19 @@
 							<h2>Ficha de Presupuesto</h2>
 							<ul>
 								<li>
-									<span>Costo Parcial (a Pagar)</span> 
-									<span> S/.70
-									    <?php 
-									    //require_once("../controlador/c_consultas.php");
-									    //foreach($this->modelo->Mostrar() as $registro){
-                                        //echo $registro["fecha_entrega"];
-									    //}
-									    //foreach($this->modelo-> $lista as $item){
-      									//echo $item['parcial'];
-   										//}
-   										?>
-									</span>
-								<li><span>Fecha de Entrega (finalizada)</span> 
-									<span>23/06/2018</span></li>
-								<li><span>Costo Total</span> 
-									<span>S/.280.00</span></li>
+									<span>Costo Parcial</span> 
+									<span>S/. <?php echo $costo_parcial; ?></span>
+								<li><span>Fecha de Pago Parcial </span> 
+									<span> <?php echo $fecha_pago_1; ?></span></li>
+								<li><span>Fecha de Entrega </span> 
+									<span> <?php echo $fecha_entrega; ?></span></li>
+								<li><span>Costo Total</span>  
+									<span>S/. <?php echo $costo_total; ?></span></li>
 
 								<span class="icon-printer"></span><a href="../assets/pdf/imprimir_presupuesto.php"> Imprimir Ficha Presupuesto</a>
 								<br></br>
 							</ul>
+							<form action="../controlador/index_Presupuesto.php" method="post" >
 							<div class="total-wrap">
 								<div class="col-md-3">
 									<input type="submit" name= "aceptar" value="Aceptar" class="btn btn-primary">
@@ -141,6 +121,7 @@
 									<button type="reset" class="btn btn-primary">Cancelar</button>
 								</div>
 							</div>
+							</form>
 						</div>
 							
 			            </div>
@@ -155,39 +136,38 @@
 		<footer id="colorlib-footer" role="contentinfo">
 			<div class="container">
 				<div class="row row-pb-md">
-					<div class="col-md-4 colorlib-widget">
+					<div class="col-md-3 colorlib-widget">
 						<h4>Sobre nuestra tienda</h4>
 						<p>Acercate a nuestro local ubicado en Gamarrita Huanca y conoce más de nuestros productos. Te esperamos.</p>
 						<p>
 						</p>
 					</div>
 
-					<div class="col-md-2 colorlib-widget">
+					<div class="col-md-3 colorlib-widget">
 						<h4>Información</h4>
 						<p>
 							<ul class="colorlib-footer-links">
-								<li><a href="contacto.html">Sobre nosotros</a></li>
+								<li><a href="vista/V_contacto.php">Sobre nosotros</a></li>
 								<li><a href="#">Información de envío</a></li>
-								<li><a href="terminos_condiciones.html">Politica de Privacidad</a></li>
+								<li><a href="vista/V_terminos_condiciones.php">Términos y Condiciones</a></li>
 								<li><a href="#">Seguimiento de Pedido</a></li>
 							</ul>
 						</p>
 					</div>
 
 					<div class="col-md-3 ">
-						<h4>Páginas y Noticias</h4>
+						<h4>Soporte</h4>
 						<ul class="colorlib-footer-links">
-							<li><a href="#">Blog</a></li>
-							<li><a href="http://www.eltiempo.com/noticias/ropa-deportiva">Noticias</a></li>
+							<span class="icon-file-text3"></span><a href="assets/pdf/manual_usuario.php" target="_blank"> Manual de Usuario</a>
 						</ul>
 					</div>
 
 					<div class="col-md-3">
 						<h4>Información de contacto</h4>
 						<ul class="colorlib-footer-links">
-							<li>Jr. Huanuco  <br> ################</li>
-							<li>#########</li>
-							<li>info@yoursite.com</li>
+							<li>Jr. Huanuco N° 248 <br> Huancayo </li>
+							<li>935993138 </li>
+							<li>iromega@hotmail.com</li>
 						</ul>
 					</div>
 				</div>
@@ -208,7 +188,7 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 	</div>
-
+	
 	<!-- jQuery -->
 	<script src="../assets/PaginaOficial/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -233,4 +213,3 @@
 
 	</body>
 </html>
-

@@ -37,8 +37,8 @@
 		
 	<div class="colorlib-loader"></div>
 	<div id="page">
-		<!-- Navegacion -->
-		<nav class="colorlib-nav" role="navigation">
+	<!-- Navegacion -->
+	<nav class="colorlib-nav" role="navigation">
 			<div class="top-menu">
 				<div class="container">
 					<div class="row">
@@ -50,51 +50,37 @@
 								<li><a href="../index.php">Inicio</a></li>
 								<li><a href="../vista/V_catalogo_productos.php"> Productos</a></li>
 								<li><a href="../vista/V_contacto.php">Contactanos</a></li>
-								<li class="active"><a href="../vista/V_ficha_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
+								<li class="active"><a href="../controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
 								<?php 
-								session_start();
+								//session_start();
 								include "../modelo/conectar_bd.php";
-							    if (isset($_SESSION['user'])){
+							    if (isset($_SESSION['user'])){ // vlaida si se ha iniciado sesión
 								?>
-								<li><a href="../controlador/c_validar_logout.php""><i class="icon-user2"></i> <?php echo $_SESSION['user']?> </a></li>
+
+								<li class="has-dropdown">
+									<a href=""><i class="icon-user2"></i> <?php echo $_SESSION['user']?> </a>
+									<ul class="dropdown">
+										<?php
+											if($_SESSION['privilegio']== 1){
+										?>
+										<li><a href="../vista/Tablero_Admi.php""><i class="icon-user-plus2">Administrador</i></a></li>
+										<?php 
+										}	
+										?>
+										<li><a href="../controlador/c_validar_logout.php">Cerrar Sesión</a></li>
+									</ul>
+								</li>	
 								<?php 
 								} else { ?>
 								<li><a href="../vista/V_login.php"><i class="icon-user2"></i> Inicio Sesión </a></li>
-								<?php } 
-								if (isset($_SESSION['user'] ))
-								{
-									if($_SESSION['privilegio']== 1){
-								?>
-										<li><a href="../vista/Tablero_Admi.php""><i class="icon-user-plus2">Administrador</i></a></li>
-								<?php 
-								}}?>
+								<?php } ?>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</nav>
-
-		<!--<aside id="colorlib-hero" class="breadcrumbs">
-			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(../assets/PaginaOficial/images/cover.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h1>Registro Pedido</h1>
-				   					<h2 class="bread"><span><a href="../index.php">Inicio</a></span> <span><a href="../vista/V_catalogo_productos.php">Productos</a></span> <span>Pedidos</span></h2>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
-		</aside>-->
-		<div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+	</nav>
+	<div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
 			<h2><span> * </span></h2>
 		</div>
 
@@ -120,7 +106,9 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<form method="post" class="colorlib-form"  action = "../controlador/index_pedido.php" name = "frm" >
+						<!--<form method="post" class="colorlib-form" action="../controlador/index_pedido.php" name = "frm" >-->
+						<form method="post" class="colorlib-form" <?php if(isset($_SESSION['user'])){?>" action = "../controlador/index_pedido.php" method="post" <?php }else{ ?> class="nav-link" data-toggle="modal" data-target="#exampleModal" <?php }?> name = "frm" >
+						
 							<h2>Ficha de Pedido</h2>
 
 		              	<div class="row">
@@ -213,7 +201,6 @@
 			</div>
 		</div>
 
-
 		<footer id="colorlib-footer" role="contentinfo">
 			<div class="container">
 				<div class="row row-pb-md">
@@ -265,6 +252,33 @@
 			</div>
 		</footer>
 	</div>
+
+	<!--<ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Cerrar Sesión</a>
+        </li>
+      </ul>-->
+	<!-- Modal - Registrarse -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">¿Tiene una cuenta?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Seleccione "Iniciar sesión" para realizar su pedido <br>
+				<a class="d-block small mt-3" class="modal-body" href="V_ingresar_persona.php">Registrarse</a>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <a class="btn btn-primary" href="../vista/V_login.php">Iniciar sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>

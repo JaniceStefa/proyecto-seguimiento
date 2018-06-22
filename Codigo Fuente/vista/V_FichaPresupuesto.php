@@ -20,6 +20,9 @@
 		<span class="icon-printer"></span><a href="../assets/pdf/imprimir_presupuesto.php">Imprimir Ficha Presupuesto</a>
 		<button type="submit" name="generar" class="btnGenerar">Enviar</button>	
 		<button type="reset" class="btnCancelar">Cancelar</button>
+		<?php
+echo "esto es ";echo $costo_parcial;
+		?>
 	</form>
 </body>
 </html>

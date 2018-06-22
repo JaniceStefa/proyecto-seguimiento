@@ -11,11 +11,11 @@
   <meta name="author" content="">
   <title>Cambiando Contraseña...</title>
   <!-- Bootstrap core CSS-->
-  <link href="../assets/LogIn/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/TableroAdmi/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="../assets/LogIn/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../assets/TableroAdmi/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="../assets/LogIn/css/sb-admin.css" rel="stylesheet">
+  <link href="../assets/css/sb-admin.css" rel="stylesheet">
 </head>
 
 <body class="bg-dark">
@@ -42,10 +42,10 @@
     </div>
   </div>
   <!-- Bootstrap core JavaScript-->
-  <script src="../assets/LogIn/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/LogIn/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/TableroAdmi/jquery/jquery.min.js"></script>
+  <script src="../assets/TableroAdmi/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
-  <script src="../assets/LogIn/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../assets/TableroAdmi/jquery-easing/jquery.easing.min.js"></script>
 </body>
 
 </html>

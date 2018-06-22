@@ -5,30 +5,54 @@
         private $db;
         public function GenerarPresupuesto() {
             require_once("../modelo/m_consultas.php");
-            $this->modelo=new M_Consultas();
+            $this->model = new M_Consultas();
             
             $Producto = $_POST['producto'];
             $Talla = $_POST['tallas'];
             $Material = $_POST['material'];
             $cantidad=$_POST['cantidad'];
-            $FechaRequerida = $_POST['fecharequerida'];
-            $precio_mat = 0;
-            $precio_prod=0;
-            // cantidad de productos fabricados en un dia 
-            $cant_dia = 50;
+            $fecha = $_POST['fecharequerida'];
 
-            //calculo para determinar fecha de entrega
-            $dias_prod = round($cantidad/$cant_dia);
-            $Fecha_Entrega = strtotime($FechaRequerida. "+" .$dias_prod. "days"); 
+            /*echo $Producto; echo  "  ";
+            echo $Talla; echo  "  ";
+            echo $Material; echo  "  ";
+            echo $cantidad; echo  "  ";
+            echo $fecha; echo  "  ";*/
+            
+            //---------- Calcular fecha de Entrega -------------
 
-        //calculo costos
+            $cant_dia = 50;                          // cantidad de productos fabricados en un dia 
+            $dias_elab = round($cantidad/$cant_dia); // dias en produccion
+            $dias_min= 3 ;                           // dias para conseguir material y otros
+            $dias_prod = $dias_elab + $dias_min;
+            //echo $dias_prod; echo  "  ";
+          
+            $fecha_entrega = strtotime ( '+'.$dias_prod.' day' , strtotime ( $fecha ) ) ;
+            $fecha_entrega = date( 'd/m/Y' , $fecha_entrega ); // cambiar formato a d/m/Y
+            //echo $fecha_entrega; echo  "  ";
+
+            //---------- Calcular fecha de pago Parcial -------------
+
+            $dia_pago = round($dias_prod/3);
+            //echo $dias_prod; echo  "  ";
+          
+            $fecha_pago_1 = strtotime ( '+'.$dia_pago.' day' , strtotime ( $fecha ) ) ;
+            $fecha_pago_1 = date( 'd/m/Y' , $fecha_pago_1 ); // cambiar formato a d/m/Y
+            //echo $fecha_pago_1; echo  "  ";
+
+            //----------- Calcular Costos -----------------
+
             // calculo de costos directos
-            foreach ($this->modelo->ConsultaPrecio($Producto, $Material) as $registro) {
-                $precio_mat = $registro["precio_mat"];
-                $precio_prod = $registro["precio_prod"];
+            
+            foreach ($this->model->ConsultaPrecio($Producto, $Material) as $registro) {
+                $precio_material = $registro['precio_mat'];
+                $precio_producto = $registro['precio_prod'];
+                
             }
-            $otros = 0.50;// distintos a tela 
-            $precio_talla = 0;  
+            //echo $precio_material; echo " ";
+            //echo $precio_producto; echo " ";
+            $otros = 0.50;          // costos distintos a tela 
+            $costo_mano_diario = 10;    // costos de mano de obra  180
             switch ($Talla) {
                 case 'S': $precio_talla = 2; break;
                 case 'M': $precio_talla = 5; break;
@@ -36,13 +60,9 @@
                 case 'XL': $precio_talla = 10; break;
             }
            
-            $cost_material = $precio_mat + $precio_talla + $otros;
-
-            // costos de mano de obra  180
-            $costo_mano_diario = 10;
+            $cost_material = $precio_material + $precio_talla + $otros;
             $cost_mano = $dias_prod * $costo_mano_diario;
-
-            $costo_directo = $cost_material + $cost_mano + $precio_prod;
+            $costo_directo = $cost_material + $cost_mano + $precio_producto;
             
              //calculo de costos indirectos
             $costo_indirecto = round(0.05*$costo_directo,2);
@@ -51,36 +71,25 @@
             $costo_unitario = $costo_directo + $costo_indirecto;
 
             //costo total 
-            $costo_total = $costo_unitario * $cantidad;
+            $costo_total = round($costo_unitario * $cantidad,2);
 
-            //costo total 
-            $costo_parcial = 0.25 * $costo_total;
+            //costo parcial 
+            $costo_parcial = round(0.25 * $costo_total,2);
 
-            //require_once("../vista/v_ficha_pedido-otro.php");
-            
-            /*echo "material: ";echo $precio_mat;
+            /*echo "material: ";echo $precio_material;
             echo " dias: ";echo $dias_prod;
-            echo " fecha ..: ";echo $Fecha_Entrega;
+            echo " fecha ..: ";echo $nuevafecha;
             echo " indirectos: "; echo $costo_indirecto;
-            echo " producto: "; echo $precio_prod;
+            echo " producto: "; echo $precio_producto;
             echo " talla: "; echo $precio_talla;
             echo " mano obra: "; echo $cost_mano;
             echo " costo material: "; echo $cost_material;
             echo " costo directo: "; echo $costo_directo;
             echo " costo unitario: "; echo $costo_unitario;
             echo " costo total: ";echo $costo_total;
-            echo " costo parcial: ";echo $costo_parcial;
-            */
-
-           // $img = $myFile->getRelativePathName();
-            //return View::make('index', compact('img'));
-            //$lista = array('fecha' => 1, 'parcial' => $costo_parcial, 'total' => $costo_total );
-            //return $lista;
-
-            /*$this->modelo->Agregar($cod_presupuesto,$precio_total,$fecha_entrega,$precio_parcial,$fecha_pago_parcial,$cod_pedido);
-            header('Location: index_Presupuesto.php');
-            header_remove('Location');*/
-            return $costo_parcial;
+            echo " costo parcial: ";echo $costo_parcial;*/
+            
+            require_once("../vista/v_ficha_presupuesto.php");
         }
         public function Presupuesto()
         {

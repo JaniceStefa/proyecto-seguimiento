@@ -1,5 +1,5 @@
 <?php 
-class M_Consultas {
+class M_Consultas{
     private $precios;
     private $db;
     public function __construct()

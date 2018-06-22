@@ -10,17 +10,15 @@
 			$this->productos=array();
 		}
 
-		public function Agregar($descripcion,$imagen){
-			$sql="CALL SP_A_TABLA_PRODUCTO('".$descripcion."','".$imagen ."')";
+		public function Agregar($descripcion,$imagen,$precio){
+			$sql="CALL SP_A_TABLA_PRODUCTO('".$descripcion."','".$imagen ."','".$precio."')";
 			$this->db->query($sql);
 		}
 
-		public function Cambiar($descripcion,$imagen){
-			$sql="CALL SP_C_TABLA_PRODUCTO('".$descripcion."','".$imagen ."')";
+		public function Cambiar($descripcion,$imagen,$precio){
+			$sql="CALL SP_C_TABLA_PRODUCTO('".$descripcion."','".$imagen ."','".$precio."')";
 			$this->db->query($sql);
-			//$this->db=null;
 		}
-
 
 		public function Mostrar(){
 

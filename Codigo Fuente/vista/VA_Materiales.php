@@ -1,21 +1,5 @@
 <!--
-Pagina administrativa - Tablero de Productos
-
-Enlace:
-* v_validar_logout
-
-Controladores:
-* index_pesona
-* index_cliente
-* index_Presupuesto
-
-* index_seguimiento
-* index_calendario
-
-
-Librerias:
-
--->
+Pagina administrativa - Tablero de Material -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,25 +112,53 @@ Librerias:
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"> Tablero </li>
-        <li class="breadcrumb-item active">Tablas </li>
+        <li class="breadcrumb-item"> Abastecimiento </li>
+        <li class="breadcrumb-item active">Materiales </li>
       </ol>
 
       <!-- Tabla Material-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Materiales</div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <form action="../controlador/index_material.php" method="post" enctype="multipart/form-data">
-              
-              <textarea name="descripcion"  id="" cols="35" rows="2" placeholder="Descripción..." required></textarea><br><br>
-              <textarea name="precio"  id="" cols="20" rows="1" placeholder="Precio" required></textarea><br><br>
-              <button type="submit" name="agregar">Agregar</button> 
-            </form>
+
+      <div class="row">
+        <div class="col-lg-7">
+          <!-- Example  Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-tag"></i> Agregar Material</div>
+            <div class="card-body">
+              <form action="../controlador/index_material.php" method="post" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label >Descripción </label><br>
+                    <textarea name="descripcion"  id="" cols="40" rows="4" placeholder="Descripción..." required></textarea><br>
+                  </div>
+                  <div class="form-group" >
+                    <label >Precio </label><br>
+                    <input class="card mb-3"  type="number" step=".01" name="precio" id="precio" size=3 maxlength=3 class="form-control" required />
+                  </div>
+                  <button type="submit" name="agregar" class="btn">Agregar</button> 
+                </form>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-5">
+          <!-- Example  Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+               <i class="fa fa-table"></i> Listado de Materiales</div>
+            <div class="card-body">
+              <div class="col-xl-9 col-sm-2 mb-3">
+                <div class="card text-white bg-primary o-hidden h-100">
+                  <div class="card-body">
+                    <div class="mr-2"> Listado de Materiales <i class="fa fa-list-ul"></i></div>
+                  </div>
+                  <a class="card-footer text-white clearfix small z-1" href="../vista/VA_CatalogoMateriales.php">
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
     </div>
 
     <!-- /.container-fluid--> 

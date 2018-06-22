@@ -26,9 +26,6 @@
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="../assets/PaginaOficial/css/flexslider.css">
 
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="../assets/PaginaOficial/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="../assets/PaginaOficial/css/owl.theme.default.min.css">
 	<!-- Date Picker -->
 	<link rel="stylesheet" href="../assets/PaginaOficial/css/bootstrap-datepicker.css">
 
@@ -37,8 +34,8 @@
 		
 	<div class="colorlib-loader"></div>
 	<div id="page">
-		<!-- Navegacion -->
-		<nav class="colorlib-nav" role="navigation">
+	<!-- Navegacion -->
+	<nav class="colorlib-nav" role="navigation">
 			<div class="top-menu">
 				<div class="container">
 					<div class="row">
@@ -49,8 +46,8 @@
 							<ul>
 								<li><a href="../index.php">Inicio</a></li>
 								<li><a href="../vista/V_catalogo_productos.php"> Productos</a></li>
-								<li class="active"><a href="../vista/V_contacto.php">Contactanos</a></li>
-								<li><a href="../controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
+								<li><a href="../vista/V_contacto.php">Contactanos</a></li>
+								<li class="active"><a href="../controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
 								<?php 
 								session_start();
 								include "../modelo/conectar_bd.php";
@@ -79,109 +76,42 @@
 					</div>
 				</div>
 			</div>
-		</nav>
+	</nav>
 
-		<aside id="colorlib-hero" class="breadcrumbs">
-			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(../assets/PaginaOficial/images/cover.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
-				   				<div class="slider-text-inner text-center">
-				   					<h1>Contacto</h1>
-				   					<h2 class="bread"><span><a href="../index.php">Inicio</a></span> <span>Contactanos</span></h2>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
-		</aside>
-
-		<div id="colorlib-contact">
+		<div class="colorlib-shop">
 			<div class="container">
-				<div class="row">
+				<div class="row row-pb-md">
 					<div class="col-md-10 col-md-offset-1">
-						<h3>Información de Contacto</h3>
-						<div class="row contact-info-wrap">
-							<div class="col-md-3">
-								<p><span><i class="icon-location"></i></span> Jr. Huanuco N° 248 <br> Huancayo </p>
+						<div class="process-wrap">
+							<div class="process text-center active">
+								<p><span>01</a></span></p>
+								<h3>Ficha de Pedido</h3>
 							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-phone3"></i></span> 935993138 </a></p>
+							<div class="process text-center active">
+								<p><span>02</span></p>
+								<h3>Presupuesto</h3>
 							</div>
-							<div class="col-md-3">
-								<p><span><i class="icon-mail5"></i></span> iromega@hotmail.com</a></p>
+							<div class="process text-center active" >
+								<p><span>03</span></p>
+								<h3>Pedido Completado</h3>
 							</div>
 						</div>
 					</div>
-
 				</div>
-			</div>
-		</div>
-
-		<div id="colorlib-about">
-			<div class="container">
 				<div class="row">
-					<div class="about-flex">
-						<div class="col-one-forth">
-							<div class="row">
-								<div class="col-md-12 about">
-									<h2>Acerca de</h2>
-									<ul>
-										<li><a class="active" data-toggle="tab"href="#nosotros">Nosotros</a></li>
-										<li><a data-toggle="tab"href="#mision">Mision</a></li>
-										<li><a data-toggle="tab"href="#vision">Vision</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-three-forth">
-							<div class="tab-content">
-								<div id="nosotros" class="tab-pane fade in active">
-								<h2>Nosotros</h2>
-									<div class="row">
-										<div class="col-md-12">
-											<p align="justify">Somos una empresa dedicada a la satisfaccion de nuestrso clientes y dotarlos de todos el equipo deportivo necesario para realizar sus actividades</p>
-
-											<div class="row row-pb-sm">
-												<div class="col-md-6">
-													<img class="img-responsive" src="../assets/PaginaOficial/images/about.jpg" alt="">
-												</div>
-												<div class="col-md-6">
-													<p align="justify">Mediante el sistema lo que queremos lograr es designar de manera más eficiente las responsabilidades y organizar de mejor forma los procesos que realiza la empresa ello con el objetivo de que cuando la empresa quiera crecer y expandirse no tenga problemas dentro de su estructura orgánica, además de que por el momento el sistema podrá adecuar horarios de entrega, registrar pedidos y notificar al cliente cómo va el proceso de su pedido para optimizar la producción de la empresa y mejorar sus utilidades.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div id="mision" class="tab-pane fade">
-								<h2>Misión</h2>
-									<div class="row">
-										<div class="col-md-12">
-											<p align="justify">Somos una empresa textil de ropa deportiva, trabajamos para cumplir con las necesidades y exigencias que requiere la población de la Región Junín, ello apoyándonos de un grupo humano comprometidos en la innovación, satisfacción y brindando el mejor trato posible para con nuestros clientes.</p>
-										</div>
-									</div>
-								</div>
-								<div id="vision" class="tab-pane fade">
-								<h2>Visión</h2>
-									<div class="row">
-										<div class="col-md-12">
-											<p align="justify">Ser reconocida como una empresa líder en confección de prendas deportivas con calidad nacional, que se caracterice por la calidad, confiabilidad y actualidad de nuestros productos ello mediante un desarrollo sustentable en base a la satisfacción de nuestros clientes, manteniendo siempre un espíritu de responsabilidad social.</p>
-										</div>
-									</div>
-								</div>
-						    </div>
-						</div>
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<span class="icon"><i class="icon-shopping-cart"></i></span>
+						<h2>Gracias por su pedido, Su orden se completó</h2>
+						<p>
+							<a href="../index.php"class="btn btn-primary">Inicio</a>
+							<a href="../vista/V_catalogo_productos.php"class="btn btn-primary btn-outline">Catálogo Productos</a>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<footer id="colorlib-footer" role="contentinfo">
+<footer id="colorlib-footer" role="contentinfo">
 			<div class="container">
 				<div class="row row-pb-md">
 					<div class="col-md-3 colorlib-widget">

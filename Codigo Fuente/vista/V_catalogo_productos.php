@@ -50,13 +50,26 @@
 								<li><a href="../index.php">Inicio</a></li>
 								<li class="active"><a href="../vista/V_catalogo_productos.php"> Productos</a></li>
 								<li><a href="../vista/V_contacto.php">Contactanos</a></li>
-								<li><a href="../vista/V_ficha_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
+								<li><a href="../controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
 								<?php 
 								session_start();
-								require_once("../modelo/conectar_bd.php");
-							    if (isset($_SESSION['user'])){
+								include "../modelo/conectar_bd.php";
+							    if (isset($_SESSION['user'])){ // vlaida si se ha iniciado sesión
 								?>
-								<li><a href="../controlador/c_validar_logout.php""><i class="icon-user2"></i> Cerrar Sesión </a></li>
+
+								<li class="has-dropdown">
+									<a href=""><i class="icon-user2"></i> <?php echo $_SESSION['user']?> </a>
+									<ul class="dropdown">
+										<?php
+											if($_SESSION['privilegio']== 1){
+										?>
+										<li><a href="../vista/Tablero_Admi.php""><i class="icon-user-plus2">Administrador</i></a></li>
+										<?php 
+										}	
+										?>
+										<li><a href="../controlador/c_validar_logout.php">Cerrar Sesión</a></li>
+									</ul>
+								</li>	
 								<?php 
 								} else { ?>
 								<li><a href="../vista/V_login.php"><i class="icon-user2"></i> Inicio Sesión </a></li>
@@ -67,7 +80,6 @@
 				</div>
 			</div>
 		</nav>
-
 
 		<aside id="colorlib-hero" class="breadcrumbs">
 			<div class="flexslider">

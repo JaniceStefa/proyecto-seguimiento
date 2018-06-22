@@ -1,20 +1,5 @@
 <!--
-Pagina administrativa - Tablero de presupuestos
-
-Enlace:
-* v_validar_logout
-
-Controladores:
-* index_pesona
-* index_cliente
-* index_Presupuesto
-
-* index_seguimiento
-* index_calendario
-
-
-Librerias:
-
+Pagina administrativa - Catalogo de productos
 -->
 <!DOCTYPE html>
 <html lang="en">

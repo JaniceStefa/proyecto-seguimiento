@@ -11,7 +11,7 @@
 		}
 
 		public function Agregar($descripcion,$precio){
-			$sql="CALL SP_A_TABLA_MATERIAL('".$descripcion."',$precio)";
+			$sql="CALL SP_A_TABLA_MATERIAL('".$descripcion."','".$precio."')";
 			$this->db->query($sql);
 		//INSERT INTO material(descripcion, precio, estado) values(_descripcion, _precio, 1)
 		}

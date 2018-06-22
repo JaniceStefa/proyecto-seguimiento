@@ -1,6 +1,5 @@
 <?php  
     session_start();
-    //require_once("../controlador/C_Persona.php");
     require_once("../controlador/c_material.php");
     $controlador=new C_Material();
     $controlador->Admi();
@@ -9,5 +8,5 @@
     	$controlador->Agregar();
     }
     if(isset($_POST['catalogo']))
-    	 $controlador->Catalogo_Producto();
+    	 $controlador->Catalogo_Material();
 ?>

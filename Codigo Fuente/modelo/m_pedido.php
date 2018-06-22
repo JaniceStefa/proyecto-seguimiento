@@ -11,7 +11,7 @@ class M_Pedido{
         $this->pedidos=array();
     }
 
-    public function Registrar_Pedido($codProducto, $talla, $codMaterial, $cantidad, $fecha_requerida)    {
+    public function Registrar_Pedido($codProducto, $talla, $codMaterial, $cantidad, $fecha_requerida){
         
         //$sql="CALL SP_A_TABLA_PEDIDO()";
         //$resultado = $this->db->query($sql);

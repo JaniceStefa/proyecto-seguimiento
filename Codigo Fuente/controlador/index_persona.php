@@ -13,17 +13,18 @@
 			//$controlador->Index();
 		if(isset($_POST['generar']))
 		{
-			$controlador->Agregar();
+			$controlador->Agregar_Cliente();
 			echo  '<script> window.location ="../vista/V_login.php" </script>';	
 		}
 		if(isset($_POST['login']))
 		{
 			$controlador->ValidarUsuario();
 		}
+		// Cambiar contraseña
 		if(isset($_POST['v_codigo_usuario']))
 		{
-			$controlador-> Verificar_Usuario();
-			echo '<script> window.location="../vista/V_actualizar_usuario.php"</script>';
+			//$controlador-> Verificar_Usuario();
+			echo '<script> window.location="../vista/V_actualizar_contrasenia.php"</script>';
 		}
 		if(isset($_POST['cambiar_password']))
 		{

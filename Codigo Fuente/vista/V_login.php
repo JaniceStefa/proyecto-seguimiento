@@ -28,7 +28,11 @@
 <body class="bg-dark">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Inicio de Sesión</div>
+      <div class="card-header">Inicio de Sesión 
+        <button class="close">
+          <span aria-hidden="true" onclick="history.back(-1)" >×</span>
+        </button>
+      </div>
       <div class="card-body">
         <form method="post" action = "../controlador/index_persona.php">
           <div class="form-group">
@@ -45,7 +49,7 @@
                 <input class="form-check-input" type="checkbox"> Recordar Contraseña</label>
             </div>
           </div>
-          <input type="submit" class="btn btn-primary btn-block" name=" login" value="Log In">
+          <input type="submit" class="btn btn-primary btn-block" name=" login" value="Iniciar Sesión">
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="V_ingresar_persona.php">Registrarse</a>

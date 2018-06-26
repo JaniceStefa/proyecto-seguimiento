@@ -107,9 +107,9 @@
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
 						<!--<form method="post" class="colorlib-form" action="../controlador/index_pedido.php" name = "frm" >-->
-						<form method="post" class="colorlib-form" <?php if(isset($_SESSION['user'])){?>" action = "../controlador/index_pedido.php" method="post" <?php }else{ ?> class="nav-link" data-toggle="modal" data-target="#exampleModal" <?php }?> name = "frm" >
+						<form class="colorlib-form" <?php if(isset($_SESSION['user'])){?>" action = "../controlador/index_pedido.php" method="post" <?php }else{ ?> data-toggle="modal" data-target="#exampleModal" <?php }?> name = "frm" >
 						
-							<h2>Ficha de Pedido</h2>
+						<h2>Ficha de Pedido</h2>
 
 		              	<div class="row">
 			               <div class="col-md-12">
@@ -131,7 +131,6 @@
 			                        </select>
 			                    </div>
 			                  </div>
-
 			               </div>
 			               <div class="col-md-12">
 			                  <div class="form-group">
@@ -226,7 +225,7 @@
 					<div class="col-md-3 ">
 						<h4>Soporte</h4>
 						<ul class="colorlib-footer-links">
-							<span class="icon-file-text3"></span><a href="assets/pdf/manual_usuario.php" target="_blank"> Manual de Usuario</a>
+							<span class="icon-file-text3"></span><a href="../assets/pdf/manual_usuario.php" target="_blank"> Manual de Usuario</a>
 						</ul>
 					</div>
 

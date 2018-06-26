@@ -142,13 +142,14 @@ Pagina administrativa - Catalogo de productos
                           echo "<div class='product-img'>";
                         
                           echo "<img src='../assets/imagenes/$archivo' width='180' height='280'>";
-                          echo "<input type='text' name='descripcion' value='$archivo'>";
+                          echo "<label type='text' name='descripcion' value='$archivo'>";
                           echo "</div>";
                           echo "</div>";
                           echo "</div>";
                         }
                       }
                     }
+
                     ?>
                   </div>
                 <br>

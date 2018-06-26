@@ -32,6 +32,8 @@
 	<!-- Date Picker -->
 	<link rel="stylesheet" href="../assets/PaginaOficial/css/bootstrap-datepicker.css">
 
+	<link rel="stylesheet" href="../assets/css/catalogoproducto.css">
+
 </head>
 	<body>
 		
@@ -50,26 +52,13 @@
 								<li><a href="../index.php">Inicio</a></li>
 								<li class="active"><a href="../vista/V_catalogo_productos.php"> Productos</a></li>
 								<li><a href="../vista/V_contacto.php">Contactanos</a></li>
-								<li><a href="../controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
+								<li><a href="../vista/V_ficha_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
 								<?php 
 								session_start();
-								include "../modelo/conectar_bd.php";
-							    if (isset($_SESSION['user'])){ // vlaida si se ha iniciado sesión
+								require_once("../modelo/conectar_bd.php");
+							    if (isset($_SESSION['user'])){
 								?>
-
-								<li class="has-dropdown">
-									<a href=""><i class="icon-user2"></i> <?php echo $_SESSION['user']?> </a>
-									<ul class="dropdown">
-										<?php
-											if($_SESSION['privilegio']== 1){
-										?>
-										<li><a href="../vista/Tablero_Admi.php""><i class="icon-user-plus2">Administrador</i></a></li>
-										<?php 
-										}	
-										?>
-										<li><a href="../controlador/c_validar_logout.php">Cerrar Sesión</a></li>
-									</ul>
-								</li>	
+								<li><a href="../controlador/c_validar_logout.php""><i class="icon-user2"></i> Cerrar Sesión </a></li>
 								<?php 
 								} else { ?>
 								<li><a href="../vista/V_login.php"><i class="icon-user2"></i> Inicio Sesión </a></li>
@@ -80,6 +69,7 @@
 				</div>
 			</div>
 		</nav>
+
 
 		<aside id="colorlib-hero" class="breadcrumbs">
 			<div class="flexslider">
@@ -101,12 +91,15 @@
 		  	</div>
 		</aside>
 
+
+		<h2>Buzos</h2>
+		<hr></hr>
 		<div class="colorlib-shop">
 			<div class="container">
 				<div class="row">
 					<?php  
 					//Ubicacion de la carpeta donde se encuentran las imagenes
-					$directorio='../assets/imagenes';
+					$directorio='../assets/imagenes/buzos/';
 					if($dir=opendir($directorio))
 					{
 						while($archivo=readdir($dir)){
@@ -117,7 +110,7 @@
 								echo "<div class='product-entry'>";
 								echo "<div class='product-img'>";
 							
-								echo "<img src='../assets/imagenes/$archivo' width='180' height='280'>";
+								echo "<img src='../assets/imagenes/buzos/$archivo' width='180' height='280'>";
 								echo "<p>$archivo</p>";
 								echo "</div>";
 								echo "</div>";
@@ -126,9 +119,103 @@
 						}
 					}
 					?>
-						</div>
-					</div>
 				</div>
+			</div>
+		</div>
+
+	
+		<h2>Casacas</h2>
+		<hr></hr>
+		<div class="colorlib-shop">
+			<div class="container">
+				<div class="row">
+					<?php  
+					//Ubicacion de la carpeta donde se encuentran las imagenes
+					$directorio='../assets/imagenes/casacas';
+					if($dir=opendir($directorio))
+					{
+						while($archivo=readdir($dir)){
+							if($archivo!='.' && $archivo!='..')
+							{
+
+								echo "<div class='col-md-3 text-center'>";
+								echo "<div class='product-entry'>";
+								echo "<div class='product-img'>";
+							
+								echo "<img src='../assets/imagenes/casacas/$archivo' width='180' height='280'>";
+								echo "<p>$archivo</p>";
+								echo "</div>";
+								echo "</div>";
+								echo "</div>";
+							}
+						}
+					}
+					?>
+				</div>
+			</div>
+		</div>
+
+		<h2>Conjuntos deportivos</h2>
+		<hr></hr>
+		<div class="colorlib-shop">
+			<div class="container">
+				<div class="row">
+					<?php  
+					//Ubicacion de la carpeta donde se encuentran las imagenes
+					$directorio='../assets/imagenes/conjuntos_deportivos';
+					if($dir=opendir($directorio))
+					{
+						while($archivo=readdir($dir)){
+							if($archivo!='.' && $archivo!='..')
+							{
+
+								echo "<div class='col-md-3 text-center'>";
+								echo "<div class='product-entry'>";
+								echo "<div class='product-img'>";
+							
+								echo "<img src='../assets/imagenes/conjuntos_deportivos/$archivo' width='180' height='280'>";
+								echo "<p>$archivo</p>";
+								echo "</div>";
+								echo "</div>";
+								echo "</div>";
+							}
+						}
+					}
+					?>
+				</div>
+			</div>
+		</div>
+
+		<h2>Polos</h2>
+		<hr></hr>
+		<div class="colorlib-shop">
+			<div class="container">
+				<div class="row">
+					<?php  
+					//Ubicacion de la carpeta donde se encuentran las imagenes
+					$directorio='../assets/imagenes/polos';
+					if($dir=opendir($directorio))
+					{
+						while($archivo=readdir($dir)){
+							if($archivo!='.' && $archivo!='..')
+							{
+
+								echo "<div class='col-md-3 text-center'>";
+								echo "<div class='product-entry'>";
+								echo "<div class='product-img'>";
+							
+								echo "<img src='../assets/imagenes/polos/$archivo' width='180' height='280'>";
+								echo "<p>$archivo</p>";
+								echo "</div>";
+								echo "</div>";
+								echo "</div>";
+							}
+						}
+					}
+					?>
+				</div>
+			</div>
+		</div>
 
 		<footer id="colorlib-footer" role="contentinfo">
 			<div class="container">

@@ -29,5 +29,7 @@
             }
             else { require_once("../vista/V_ficha_pedido.php");}
         }
-    }   
+    }
+    else {
+        require_once("../vista/V_ficha_pedido.php");}
 ?>

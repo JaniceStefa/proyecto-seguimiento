@@ -139,15 +139,37 @@
 				<div class="row">
 					<div class="col-md-3 text-center">
 						<div class="product-entry">
-							<div class="product-img" style="background-image: url(assets/PaginaOficial/images/item-9.jpg);">
-								<div class="cart">
-									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
-									</p>
-								</div>
+							<div class="product-img" style="background-image: url(assets/repositorio_imagenes/b.jpg);">
 							</div>
 							<div class="desc">
-								<h3>Floral Dress</a></h3>
+								<h3>Buzo plomo</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="product-entry">
+							<div class="product-img" style="background-image: url(assets/repositorio_imagenes/c1.jpg);">
+							</div>
+							<div class="desc">
+								<h3>Conjunto deportivo naranja</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="product-entry">
+							<div class="product-img" style="background-image: url(assets/repositorio_imagenes/polo1.png);">
+							</div>
+							<div class="desc">
+								<h3>Polo amarillo</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center">
+						<div class="product-entry">
+							<div class="product-img" style="background-image: url(assets/repositorio_imagenes/cas9.png);">
+							</div>
+							<div class="desc">
+								<h3>Casaca con capucha</a></h3>
 							</div>
 						</div>
 					</div>
@@ -161,35 +183,7 @@
 								</div>
 							</div>
 							<div class="desc">
-								<h3>Floral Dress</a></h3>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center">
-						<div class="product-entry">
-							<div class="product-img" style="background-image: url(assets/PaginaOficial/images/item-9.jpg);">
-								<div class="cart">
-									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3>Floral Dress</a></h3>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center">
-						<div class="product-entry">
-							<div class="product-img" style="background-image: url(assets/PaginaOficial/images/item-9.jpg);">
-								<div class="cart">
-									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3>Floral Dress</a></h3>
+								<h3>K</a></h3>
 							</div>
 						</div>
 					</div>

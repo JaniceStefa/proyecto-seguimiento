@@ -126,12 +126,13 @@ Pagina administrativa - Tablero de Productos -->
               <form action="../controlador/index_producto.php" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label >Categoría </label><br>
-                    <select name="producto" id="producto" class="form-control" required>
+                    <select name="categoria" id="categoria" class="form-control" required>
                       <option value="">Elige una opción </option>
-                      <option value="1">Buzos</option> 
-                      <option value="2">Casacas</option> 
-                      <option value="3">Polos</option> 
-                      <option value="4">Shorts</option> 
+                      <option value="Buzos">Buzos</option> 
+                      <option value="Casacas">Casacas</option> 
+                      <option value="Polos">Polos</option> 
+                      <option value="Shorts">Shorts</option> 
+                      <option value="Conjunto">Conjunto Deportivo</option> 
                       </select>
                   </div>
                   <div class="form-group">

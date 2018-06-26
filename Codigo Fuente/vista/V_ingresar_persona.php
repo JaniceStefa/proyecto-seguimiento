@@ -1,15 +1,5 @@
 <!--
 Pagina de registro de usuario
-Enlace:
-*v_login
-
-Controlador:
-*index_persona
-
-Librerias:
-*
-*
-
 -->
 <!DOCTYPE html>
 <html lang="es">
@@ -32,20 +22,24 @@ Librerias:
 <body class="bg-dark">
   <div class="container">
     <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Registrando Persona</div>
+      <div class="card-header">Registro de Nuevo Cliente
+        <button class="close">
+          <span aria-hidden="true" onclick="history.back(-1)" >×</span>
+        </button>
+      </div>
       <div class="card-body">
         <form action="../controlador/index_persona.php" method="post">
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <label for="exampleInputLastName">Apellido Paterno
-                </label>
+                </label> <label style="color:#FF0000">*</label>
                 <input required name="ap_paterno" class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Apellido Paterno">
                 </div>
 
                 <div class="col-md-6">
                 <label for="exampleInputLastName">Apellido Materno
-                </label>
+                </label> <label style="color:#FF0000">*</label>
                 <input required name="ap_materno" class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Apellido Materno">
               </div>
             </div>
@@ -53,18 +47,18 @@ Librerias:
           <div class="form-group">
             <div class="form-row">
                 <div class="col-md-6">
-                <label for="exampleInputName">Nombres</label>
+                <label for="exampleInputName">Nombres</label> <label style="color:#FF0000">*</label>
                 <input required name="nombre" class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Nombres">
                 </div>
                 <div class="col-md-6">
-                <label for="exampleInputName">DNI</label>
-                <input name="DNI" class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="N° DNI">
+                <label for="exampleInputName">DNI</label> <label style="color:#FF0000">*</label>
+                <input required name="DNI" class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="N° DNI">
                 </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" name="email" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="exampleInputEmail1">Correo Electrónico</label>
+            <input class="form-control" id="exampleInputEmail1" name="email" type="email" aria-describedby="emailHelp" placeholder="Email">
           </div>
           <div class="form-group">
                 <label for="exampleInputLastName">Dirección
@@ -75,7 +69,7 @@ Librerias:
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="exampleInputPassword1">Contraseña</label>
+                <label for="exampleInputPassword1">Contraseña</label> <label style="color:#FF0000">*</label>
                 <input required name="contrasenia" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
               </div>
               <div class="col-md-6">

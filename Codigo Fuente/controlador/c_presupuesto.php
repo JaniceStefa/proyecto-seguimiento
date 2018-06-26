@@ -2,30 +2,25 @@
 	class C_Presupuesto{
 
 		private $modelo;
-		public function Index()
-		{
-			require_once("../modelo/m_presupuesto.php");
-			$this->modelo=new M_Presupuesto();
-			require_once("../vista/VA_Presupuestos.php");
-		}
+		private $modelo1;
+
 		public function Admi(){
 			require_once("../modelo/m_presupuesto.php");
 			$this->modelo=new M_Presupuesto();
 			require_once("../vista/VA_Presupuestos.php");
 		}
 
-		public function Agregar(){
+		public function AgregarPresupuesto(){
+			require_once("../modelo/m_pedido.php");
+			$this->modelo=new M_pedido();
+
 			require_once("../modelo/m_presupuesto.php");
-			$this->modelo=new M_Presupuesto();
+			$this->modelo1=new M_Presupuesto();
 			
-			$CodPresupuesto=$_POST['codpresupuesto'];
-			$FechaEntrega=$_POST['fechaentrega'];
-			$FechaPagoParcial=$_POST['fechapagoparcial'];
-			$PrecioTotal=$_POST['preciototal'];
-			$PrecioParcial=$PrecioTotal*0.4;
-			$CodPedido=$_POST['codigopedido'];
-			$Estado=$_POST['estado'];
-			$this->modelo->Agregar($CodPresupuesto,$PrecioTotal,$FechaEntrega,$PrecioParcial,$FechaPagoParcial,$CodPedido,$Estado);
+			//codigo pedido
+			$this->modelo->Mostrar_Cod();
+			
+			$this->modelo1->Agregar_Presupuesto($costo_total,$FechaEntrega,$costo_parcial,$fecha_pago_1,$CodPedido);
 
 			header('Location: index_Presupuesto.php');
 			header_remove('Location');

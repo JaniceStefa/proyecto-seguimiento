@@ -94,39 +94,35 @@
 				</div>
 				<div class="row">
 					<div class="col-md-7 col-md-offset-3">
-							
 		              	<div class="col-md-10">
 						<div class="cart-detail">
-							<h2>Ficha de Presupuesto</h2>
-							<ul>
-								<li>
-									<span>Costo Parcial</span> 
-									<span>S/. <?php echo $costo_parcial; ?></span>
-								<li><span>Fecha de Pago Parcial </span> 
-									<span> <?php echo $fecha_pago_1; ?></span></li>
-								<li><span>Fecha de Entrega </span> 
-									<span> <?php echo $fecha_entrega; ?></span></li>
-								<li><span>Costo Total</span>  
-									<span>S/. <?php echo $costo_total; ?></span></li>
+							<form action="../controlador/index_Presupuesto.php" method="post">
+								<h2>Ficha de Presupuesto</h2>
+								<ul>
+									<li>
+										<span>Costo Parcial</span> 
+										<span>S/. <?php echo $costo_parcial; ?></span>
+									<li><span>Fecha de Pago Parcial </span> 
+										<span> <?php echo $fecha_pago_1; ?></span></li>
+									<li><span>Fecha de Entrega </span> 
+										<span> <?php echo $fecha_entrega; ?></span></li>
+									<li><span>Costo Total</span>  
+										<span>S/. <?php echo $costo_total; ?></span></li>
 
-								<span class="icon-printer"></span><a href="../assets/pdf/imprimir_presupuesto.php"> Imprimir Ficha Presupuesto</a>
-								<br></br>
-							</ul>
-							<form action="../controlador/index_Presupuesto.php" method="post" >
-							<div class="total-wrap">
-								<div class="col-md-3">
-									<input type="submit" name= "aceptar" value="Aceptar" class="btn btn-primary">
+									<span class="icon-printer"></span><a href="../assets/pdf/imprimir_presupuesto.php"> Imprimir Ficha Presupuesto</a>
+									<br></br>
+								</ul>
+								<div class="total-wrap">
+									<div class="col-md-3">
+										<input type="submit" name= "aceptar" value="Aceptar" class="btn btn-primary">
+									</div>
+									<div class="col-md-8">
+										<button type="reset" class="btn btn-primary">Cancelar</button>
+									</div>
 								</div>
-								<div class="col-md-8">
-									<button type="reset" class="btn btn-primary">Cancelar</button>
-								</div>
-							</div>
 							</form>
 						</div>
-							
-			            </div>
-			            
-		           		</form>
+			            </div>		            
 					</div>
 				</div>
 			</div>

@@ -21,10 +21,14 @@
 <body class="bg-dark">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Cambiar Contraseña Password</div>
+      <div class="card-header">Cambiar Contraseña
+        <button class="close">
+          <span aria-hidden="true" onclick="history.back(-1)" >×</span>
+        </button>
+      </div>
       <div class="card-body">
         <div class="text-center mt-4 mb-5">
-          <h4>Olvidaste tu contraseña?</h4>
+          <h4>¿Olvidaste tu contraseña?</h4>
           <p>Ingrese su Número de DNI</p>
         </div>
         <form method="post" action="../controlador/index_persona.php">

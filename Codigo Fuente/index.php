@@ -43,13 +43,18 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="index.php">Empresa Garras</a></div>
+							<div id="colorlib-logo"><a href="index.php">Empresa Garras
+								<div class="col-md-5">
+									<img class="img-responsive" src="assets/logo.jpg">
+								</div>
+								</a>
+							</div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="index.php">Inicio</a></li>
-								<li><a href="vista/V_catalogo_productos.php"> Productos</a></li>
-								<li><a href="vista/V_contacto.php">Contactanos</a></li>
+								<li class="active"><a href="index.php"> <i class="icon-home"></i> Inicio</a></li>
+								<li><a href="vista/V_catalogo_productos.php"> <i class="icon-tag"></i> Productos</a></li>
+								<li><a href="vista/V_contacto.php"><i class="icon-phone"></i> Contactanos</a></li>
 								<li><a href="controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
 								<?php 
 								session_start();
@@ -208,9 +213,7 @@
 						<p>
 							<ul class="colorlib-footer-links">
 								<li><a href="vista/V_contacto.php">Sobre nosotros</a></li>
-								<li><a href="#">Información de envío</a></li>
 								<li><a href="vista/V_terminos_condiciones.php">Términos y Condiciones</a></li>
-								<li><a href="#">Seguimiento de Pedido</a></li>
 							</ul>
 						</p>
 					</div>

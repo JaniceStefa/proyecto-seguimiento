@@ -164,7 +164,7 @@ Librerias:
               </tfoot>
               <tbody>
                 <?php
-                  foreach($this->modelo->Mostrar_Persona() as $registro){
+                  foreach($this->modelo->Mostrar_Cliente() as $registro){
                     echo "<tr class='contenidotable'><td>".$registro["DNI"]. "</td>";
                     echo "<td>".$registro["ap_paterno"]."</td>";
                     echo "<td>".$registro["ap_materno"]."</td>";
@@ -172,6 +172,7 @@ Librerias:
                     echo "<td>".$registro["direccion"]."</td>";
                     echo "<td>".$registro["email"]."</td>";
                     echo "<td>".$registro["telefono"]."</td>";
+                    //echo "<td><button type='submit' name='actualizar' class='btnModificar'><a class='btn' href='../vista/V_actualizar_presupuesto.php?c=".$registro['ap_paterno']." && cpe=".$registro['ap_materno']." && fe=".$registro['nombre']." && fpp=".$registro['direccion']." && pp=".$registro['email']." && pt=".$registro['telefono']."'>Actualizar</a></button></td>";
                     }
                 ?>
               </tbody>

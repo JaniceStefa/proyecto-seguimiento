@@ -45,9 +45,25 @@
 			//_DNI,_contrasenia,_tipo_acceso,_estado
 
 		}
-		// Mostrar listado de Clientes
+		// Mostrar listado de personas registradas (clientes - administradores)
 		public function Mostrar_Persona(){
 			$sql=$this->db->query("CALL SP_M_TABLA_PERSONA");
+			while($filas=$sql->fetch(PDO::FETCH_ASSOC)){
+				$this->personas[]=$filas;
+				}
+				return $this->personas;
+		}
+		// Mostrar listado de clientes
+		public function Mostrar_Cliente(){
+			$sql=$this->db->query("CALL SP_M_CLIENTES");
+			while($filas=$sql->fetch(PDO::FETCH_ASSOC)){
+				$this->personas[]=$filas;
+				}
+				return $this->personas;
+		}
+		// Mostrar listado de administradores
+		public function Mostrar_Admi(){
+			$sql=$this->db->query("CALL SP_M_ADMINISTRADORES");
 			while($filas=$sql->fetch(PDO::FETCH_ASSOC)){
 				$this->personas[]=$filas;
 				}

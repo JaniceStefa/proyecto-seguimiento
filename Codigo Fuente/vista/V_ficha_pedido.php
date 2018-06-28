@@ -47,9 +47,9 @@
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li><a href="../index.php">Inicio</a></li>
-								<li><a href="../vista/V_catalogo_productos.php"> Productos</a></li>
-								<li><a href="../vista/V_contacto.php">Contactanos</a></li>
+								<li><a href="../index.php"><i class="icon-home"></i> Inicio</a></li>
+								<li><a href="../vista/V_catalogo_productos.php"><i class="icon-tag"></i> Productos</a></li>
+								<li><a href="../vista/V_contacto.php"> <i class="icon-phone"></i> Contactanos</a></li>
 								<li class="active"><a href="../controlador/index_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
 								<?php 
 								//session_start();
@@ -177,12 +177,12 @@
 									</div>
 						  </div>
 			               <div class="form-group">
-										<div class="col-md-12">
-											<div class="checkbox">
-												<a href = "V_terminos_condiciones.php" >Leer los terminos y condiciones</a><br /><br />
-											   <label><input type="checkbox" name="aceptoterms" required /> Acepto los términos y condiciones</label>
-											</div>
-										</div>
+								<div class="col-md-12">
+									<div class="checkbox">
+										<a href = "../vista/V_terminos_condiciones.php" >Leer los términos y condiciones</a><br /><br />
+								        <label><input type="checkbox" name="aceptoterms" required /> Acepto los términos y condiciones</label>
+									</div>
+								</div>
 							</div>
 							<div class="total-wrap">
 								<div class="col-md-3">
@@ -214,10 +214,8 @@
 						<h4>Información</h4>
 						<p>
 							<ul class="colorlib-footer-links">
-								<li><a href="vista/V_contacto.php">Sobre nosotros</a></li>
-								<li><a href="#">Información de envío</a></li>
-								<li><a href="vista/V_terminos_condiciones.php">Términos y Condiciones</a></li>
-								<li><a href="#">Seguimiento de Pedido</a></li>
+								<li><a href="../vista/V_contacto.php">Sobre nosotros</a></li>
+								<li><a href="../vista/V_terminos_condiciones.php">Términos y Condiciones</a></li>
 							</ul>
 						</p>
 					</div>

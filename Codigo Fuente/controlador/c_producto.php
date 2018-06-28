@@ -7,7 +7,7 @@
 		{
 			require_once("../modelo/m_producto.php");
 			$this->modelo=new M_Producto();
-			require_once("../vista/VA_Productos.php");
+			require_once("../vista/VA_CatalogoProductos.php");
 		}
 		// Controlador Modelo Producto - Listado/Catálogo Producto
 		// Funcionalidad de Administrador

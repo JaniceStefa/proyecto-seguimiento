@@ -135,52 +135,37 @@ Librerias:
       <!-- Tabla Presupuesto-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Tabla de Presupuestos</div>
+          <i class="fa fa-table"></i> Tabla de Materiales</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Código Presupuesto</th>
-                  <th>Fecha Entrega</th>
-                  <th>Fecha Pago parcial</th>
-                  <th>Precio Parcial</th>
-                  <th>Precio Total</th>
-                  <th>Código Pedido</th>
+                  <th>Código Material</th>
+                  <th>Descripción</th>
+                  <th>Precio</th>
                   <th>Actualizar</th>
                   <th>Eliminar</th>
-                  
                 </tr>
               </thead>
               <tfoot>
                 <tr>
-                  <th>Código Presupuesto</th>
-                  <th>Fecha Entrega</th>
-                  <th>Fecha Pago parcial</th>
-                  <th>Precio Parcial</th>
-                  <th>Precio Total</th>
-                  <th>Código Pedido</th>
+                  <th>Código Material</th>
+                  <th>Descripción</th>
+                  <th>Precio</th>
                   <th>Actualizar</th>
                   <th>Eliminar</th>
-                  
                 </tr>
               </tfoot>
               <tbody>
                 <?php
-                  foreach($this->modelo->Mostrar_Presupuesto() as $registro){
-                    echo "<tr class='contenidotable'><td>".$registro["cod_presupuesto"]. "</td>";
-                    echo "<td>".$registro["fecha_entrega"]. "</td>";
-                    echo "<td>".$registro["fecha_pago_parcial"]. "</td>";
-                    echo "<td>".$registro["precio_parcial"]. "</td>";
-                    echo "<td>".$registro["precio_total"]. "</td>";
-                    echo "<td>".$registro["cod_pedido"]. "</td>";
-                    echo "<td><button type='submit' name='actualizar' class='btnModificar'><a class='btn' href='../vista/V_actualizar_presupuesto.php?c=".$registro['cod_presupuesto']." && cpe=".$registro['cod_pedido']." && fe=".$registro['fecha_entrega']." && fpp=".$registro['fecha_pago_parcial']." && pp=".$registro['precio_parcial']." && pt=".$registro['precio_total']."'>Actualizar</a></button></td>";
-                    
-                    echo "<td><button type='submit' name='eliminar' class='btnEliminar'><a class='btn' href='../vista/V_eliminar_presupuesto.php?c=".$registro['cod_presupuesto']."'>";
-                    ?>
-                    <i class="fa fa-fw fa-trash"></i></button></td>";
-                  <?php }
-
+                  foreach($this->modelo->Mostrar_Material() as $registro){
+                    echo "<tr class='contenidotable'><td>".$registro["cod_material"]. "</td>";
+                    echo "<td>".$registro["descripcion_mat"]. "</td>";
+                    echo "<td>".$registro["precio_mat"]. "</td>";
+                    echo "<td><button type='submit' name='actualizar' class='btnModificar'><a class='btn' href='../vista/V_actualizar_presupuesto.php?c=".$registro['cod_material']." && cpe=".$registro['descripcion_mat']." && fe=".$registro['precio_mat']." && pt=".$registro['precio_total']."'>Actualizar</a></button></td>";
+                    echo "<td><button type='submit' name='eliminar' class='btnEliminar'><a class='btn' href='../vista/V_eliminar_presupuesto.php?c=".$registro['cod_presupuesto']."'> Eliminar</a></button></td>";
+                  }
                 ?>
               </tbody>
             </table>

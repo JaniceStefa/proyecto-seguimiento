@@ -49,10 +49,11 @@
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li><a href="../index.php">Inicio</a></li>
-								<li class="active"><a href="../vista/V_catalogo_productos.php"> Productos</a></li>
-								<li><a href="../vista/V_contacto.php">Contactanos</a></li>
+								<li><a href="../index.php"><i class="icon-home"></i> Inicio</a></li>
+								<li class="active"><a href="../vista/V_catalogo_productos.php"><i class="icon-tag"></i> Productos</a></li>
+								<li><a href="../vista/V_contacto.php"> <i class="icon-phone"></i> Contactanos</a></li>
 								<li><a href="../vista/V_ficha_pedido.php"><i class="icon-shopping-cart"></i> Pedidos </a></li>
+
 								<?php 
 								session_start();
 								require_once("../modelo/conectar_bd.php");
@@ -231,10 +232,8 @@
 						<h4>Información</h4>
 						<p>
 							<ul class="colorlib-footer-links">
-								<li><a href="vista/V_contacto.php">Sobre nosotros</a></li>
-								<li><a href="#">Información de envío</a></li>
-								<li><a href="vista/V_terminos_condiciones.php">Términos y Condiciones</a></li>
-								<li><a href="#">Seguimiento de Pedido</a></li>
+								<li><a href="../vista/V_contacto.php">Sobre nosotros</a></li>
+								<li><a href="../vista/V_terminos_condiciones.php">Términos y Condiciones</a></li>
 							</ul>
 						</p>
 					</div>
@@ -242,7 +241,7 @@
 					<div class="col-md-3 ">
 						<h4>Soporte</h4>
 						<ul class="colorlib-footer-links">
-							<span class="icon-file-text3"></span><a href="assets/pdf/manual_usuario.php" target="_blank"> Manual de Usuario</a>
+							<span class="icon-file-text3"></span><a href="../assets/pdf/manual_usuario.php" target="_blank"> Manual de Usuario</a>
 						</ul>
 					</div>
 

@@ -13,8 +13,8 @@
 		//1 es administrador
 		// Agregar nueva Persona y Usuario del tipo Cliente a Base de Datos
 		public function Agregar_Cliente($DNI,$ap_paterno,$ap_materno,$nombre,$direccion,$email,$telefono,$contrasenia){
-			$sql="CALL SP_A_TABLA_PERSONA('".$DNI."','".$ap_paterno."','".$ap_materno."','".$nombre."','".$direccion."','".$email."','".$telefono."')";
-			$sql1="CALL SP_A_TABLA_USUARIO('".$DNI."','".$contrasenia."',0)";
+			$sql="CALL SP_A_TABLA_PERSONA('".$DNI."','".$ap_paterno."','".$ap_materno."','".$nombre."','".$direccion."','".$email."','".$telefono."',1)";
+			$sql1="CALL SP_A_TABLA_USUARIO('".$DNI."','".$contrasenia."',0,1)";
 
 			$this->db->query($sql);
 			$this->db->query($sql1);

@@ -13,7 +13,7 @@
 			//$controlador->Index();
 		if(isset($_POST['generar']))
 		{
-			$controlador->Agregar_Cliente();
+			$controlador->AgregarCliente();
 			echo  '<script> window.location ="../vista/V_login.php" </script>';	
 		}
 		if(isset($_POST['login']))
